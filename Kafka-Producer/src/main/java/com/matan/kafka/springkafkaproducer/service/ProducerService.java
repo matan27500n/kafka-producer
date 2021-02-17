@@ -21,8 +21,7 @@ public class ProducerService {
 
 	@Scheduled(fixedRate = 1000)
 	public void createEvent() {
-		kafkaTemplate.send(TOPIC,
-				new Event(count, new Date(), count + 1, count + 2, "full date: " + new Date().toString()));
+		kafkaTemplate.send(TOPIC, new Event(count, new Date(), count + 1, count + 2, "created event: " + count));
 		count++;
 	}
 }
