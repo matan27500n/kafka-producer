@@ -16,8 +16,7 @@ public class ProducerService {
 	}
 
 	private static final String TOPIC = "Kafka_Example";
-
-	int count = 1;
+	private int count = 1;
 
 	@Scheduled(fixedRate = 1000)
 	public void createEvent() {
