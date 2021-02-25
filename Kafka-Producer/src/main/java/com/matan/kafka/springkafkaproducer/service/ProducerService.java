@@ -15,10 +15,10 @@ public class ProducerService {
 		this.kafkaTemplate = kafkaTemplate;
 	}
 
-	private static final String TOPIC = "Kafka_Example";
+	private static final String TOPIC = "eventsProducer";
 	private int count = 1;
 
-	@Scheduled(fixedRate = 1000)
+	@Scheduled(fixedRate = 10000)
 	public void createEvent() {
 		kafkaTemplate.send(TOPIC, new Event(count, new Date(), count + 1, count + 2, "created event: " + count));
 		count++;
