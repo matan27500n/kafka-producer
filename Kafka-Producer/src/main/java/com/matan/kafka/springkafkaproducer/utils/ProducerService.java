@@ -1,13 +1,13 @@
-package com.matan.kafka.springkafkaproducer.service;
+package com.matan.kafka.springkafkaproducer.utils;
 
 import java.util.Date;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
-import com.matan.kafka.springkafConsumer.service.EventService;
+import org.springframework.stereotype.Component;
 import com.matan.kafka.springkafkaproducer.model.Event;
+import com.matan.kafka.springkafkaproducer.service.EventService;
 
-@Service
+@Component
 public class ProducerService {
 
 	private KafkaTemplate<String, Event> kafkaTemplate;
