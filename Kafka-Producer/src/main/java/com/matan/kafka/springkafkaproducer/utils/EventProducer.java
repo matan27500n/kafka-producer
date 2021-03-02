@@ -8,14 +8,14 @@ import com.matan.kafka.springkafkaproducer.model.Event;
 import com.matan.kafka.springkafkaproducer.service.EventService;
 
 @Component
-public class ProducerService {
+public class EventProducer {
 
 	private KafkaTemplate<String, Event> kafkaTemplate;
 	private int count;
 
-	public ProducerService(KafkaTemplate<String, Event> kafkaTemplate, EventService eventService) {
+	public EventProducer(KafkaTemplate<String, Event> kafkaTemplate, EventService eventService) {
 		this.kafkaTemplate = kafkaTemplate;
-		this.count = eventService.getAllEvents().size();
+		this.count = eventService.getAllEventsSize();
 	}
 
 	private static final String TOPIC = "events";
